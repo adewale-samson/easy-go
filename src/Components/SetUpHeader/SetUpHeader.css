@@ -1,0 +1,26 @@
+.account-heading {
+  text-align: start;
+  margin: 30px 0px 20px 0px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 11px;
+  letter-spacing: -0.04em;
+  color: #023047;
+}
+.head-list {
+  list-style-type: none;
+  display: flex;
+  text-align: start;
+  border-bottom: 1px solid #dedddc;
+  font-size: 14px;
+  line-height: 11px;
+}
+.list-item {
+  margin-bottom: 8px;
+  padding-right: 8.59px;
+  color: #d0bab8;
+}
+.item-plan {
+  color: #023047;
+  font-weight: 700;
+}

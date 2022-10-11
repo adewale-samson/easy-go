@@ -1,6 +1,10 @@
 
 import './App.css';
+import Nav from './Components/Nav/Nav';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import Login from './Pages/Login/Login';
 import SelectPlan from './Pages/SelectPlan/SelectPlan';
+import SignUp from './Pages/SignUp/SignUp'
 
 
 function App() {
@@ -21,6 +25,10 @@ function App() {
         </a>
       </header> */}
       <SelectPlan />
+      <ContactUs />
+      <Nav />
+      <Login />
+      <SignUp />
     </div>
   );
 }

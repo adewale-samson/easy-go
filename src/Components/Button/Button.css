@@ -1,0 +1,12 @@
+.btn-list {
+  font-family: "Montserrat";
+  display: block;
+  margin: 0 auto;
+  background: #004e56;
+  color: #fff;
+  width: 96%;
+  height: 46px;
+  border: none;
+  margin-bottom: 10px;
+  color: #023047;
+}

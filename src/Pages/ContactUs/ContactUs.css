@@ -1,0 +1,54 @@
+.contact-container-main{
+    display: flex;
+    height: 1024px;
+}
+.contact-sub1 {
+  width: 54.167%;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  padding: 0px 82px 0px 165px;
+}
+.container-sub1-heading {
+  /* width: 51%; */
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: -0.04em;
+  color: #023047;
+  margin: 162px 0px 15px 0px;
+}
+.container-para {
+  /* width: 68.33%; */
+  font-size: 14px;
+  line-height: 26px;
+  color: #023047;
+  margin-bottom: 32px;
+}
+.contact-form{
+    margin-bottom: 33px;
+}
+.contact-label-main {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.06em;
+  color: #023047;
+}
+.contact-label{
+    font-weight: 500;
+font-size: 14px;
+line-height: 42px;
+padding-left: 18px;
+}
+.contact-sub2{
+    width: 45.833%;
+    background: #FB8500;
+    position: relative;
+}
+.contact-img{
+  max-width: 100%;
+  position: absolute;
+  bottom: 25px;
+  right: 0px;
+}
+

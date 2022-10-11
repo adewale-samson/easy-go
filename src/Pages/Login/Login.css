@@ -1,0 +1,63 @@
+.login-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #023047;
+  height: 1024px;
+}
+.login-subcontainer1 {
+  width: 54.167%;
+  padding: 0px 165px;
+}
+.login-heading {
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: -0.09em;
+  margin-bottom: 20px;
+  margin-top: 200px;
+}
+.login-para {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 41px;
+}
+.login-small {
+  color: #138ecb;
+  text-decoration: underline;
+}
+.login-form{
+    margin-bottom: 20px;
+}
+.login-label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 11px;
+}
+.login-input1 {
+  margin-bottom: 20px;
+}
+.login-input {
+  margin-top: 10px;
+  /* width: 57.051%; */
+  width: 100%;
+  height: 50px;
+}
+.label-show{
+    margin-right: auto;
+    color: #138ECB;
+}
+.login-subcontainer2 {
+  width: 45.833%;
+  position: relative;
+  background: #fb8500;
+}
+.sub2-image {
+    max-width: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+

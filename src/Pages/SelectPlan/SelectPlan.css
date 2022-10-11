@@ -2,6 +2,7 @@
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
+  padding: 0px 140px;
 }
 .account-heading {
   text-align: start;
@@ -39,10 +40,87 @@
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
-.compare{
-    font-size: 14px;
-line-height: 11px;
-color: #138ECB;
-font-weight: 700;
-text-align: start;
+.compare {
+  font-size: 14px;
+  line-height: 11px;
+  color: #138ecb;
+  font-weight: 700;
+  text-align: start;
+}
+.compare-img {
+  margin-right: 15.53px;
+}
+.purchase-container {
+  margin-top: 21px;
+  background: #efeeea;
+  height: 117px;
+  /* border: 1px solid black; */
+}
+.purchase-para {
+  padding: 40px 0px 16px 30px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 11px;
+  color: #000000;
+}
+.bill {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #023047;
+  padding-left: 20px;
+}
+.currency-span {
+  color: #138ecb;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 11px;
+  padding-left: 13px;
+}
+.drop-icon {
+  padding-left: 9.07px;
+}
+.list-container {
+  /* padding: 25px; */
+  border: 1px solid #dbd9d2;
+}
+.plan-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 12px;
+}
+.contact-list {
+  padding-left: 28px;
+  padding-bottom: 9px;
+}
+.email-list {
+  padding-left: 28px;
+  padding-bottom: 38px;
+}
+.btn-list {
+  display: block;
+  margin: 0 auto;
+  background: #004e56;
+  color: #fff;
+  width: 96%;
+  height: 46px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 468px) {
+  .card-flex {
+    display: block;
+  }
+  .select-class{
+    padding: 0px 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .select-class {
+    padding: 0px 100px;
+  }
 }

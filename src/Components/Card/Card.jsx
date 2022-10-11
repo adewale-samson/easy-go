@@ -1,10 +1,15 @@
 import './Card.css'
-const Card = ({heading, paragraph, amount, contact}) => {
+import unchecked from '../../Assets/uncheck.svg'
+import checked from '../../Assets/check.svg'
+const Card = ({heading, paragraph, amount, contact, clickMe}) => {
+  // const trialClick = (item) => console.log(item)
+  
   return (
     <article className='card-container'>
         <div className="card-heading-check">
             <h3 className="card-h3">{heading}</h3>
-            <span className="dot"></span>
+            {/* <img src={unchecked} alt="" className='dot'/> */}
+            <img src={checked} alt="" className='dot' onClick={clickMe}/>
         </div>
         <p className="card-para">{paragraph}</p>
         <p className="pay-para">You’ll pay</p>
