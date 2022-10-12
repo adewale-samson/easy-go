@@ -10,6 +10,7 @@
 .head-list {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   text-align: start;
   border-bottom: 1px solid #dedddc;
   font-size: 14px;
@@ -24,3 +25,14 @@
   color: #023047;
   font-weight: 700;
 }
+
+/* @media screen and (max-width: 427px) {
+  .head-list{
+    font-size: 12px;
+  }
+  .list-item{
+    padding-right: 0px;
+  }
+
+} */
+

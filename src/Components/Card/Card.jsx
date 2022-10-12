@@ -1,15 +1,19 @@
 import './Card.css'
 import unchecked from '../../Assets/uncheck.svg'
 import checked from '../../Assets/check.svg'
+import { useState } from 'react'
 const Card = ({heading, paragraph, amount, contact, clickMe}) => {
-  // const trialClick = (item) => console.log(item)
+  const [checkbox, setCheckBox] = useState(false)
+  // const changeImage = () => setCheckBox(para =>!para)
   
   return (
     <article className='card-container'>
         <div className="card-heading-check">
             <h3 className="card-h3">{heading}</h3>
             {/* <img src={unchecked} alt="" className='dot'/> */}
-            <img src={checked} alt="" className='dot' onClick={clickMe}/>
+            <div onClick={clickMe} >
+              {checkbox?<img src={checked} alt="" className='dot' />: <img src={unchecked} alt="" className='dot'/>}</div>
+            
         </div>
         <p className="card-para">{paragraph}</p>
         <p className="pay-para">You’ll pay</p>

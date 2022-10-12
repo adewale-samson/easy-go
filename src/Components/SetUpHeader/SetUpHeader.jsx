@@ -2,6 +2,7 @@ import list from '../../Assets/list_icon.svg'
 import greater from '../../Assets/greater.svg'
 import './SetUpHeader.css'
 
+
 const SetUpHeader = () => {
   return (
     <>

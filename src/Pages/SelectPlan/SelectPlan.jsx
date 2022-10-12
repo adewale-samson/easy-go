@@ -4,59 +4,65 @@ import compare from "../../Assets/compare.svg";
 import down from "../../Assets/down-arrow.svg";
 import SetUpHeader from "../../Components/SetUpHeader/SetUpHeader";
 import Button from "../../Components/Button/Button";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const SelectPlan = () => {
   const cardState = [
     {
-      id: 10,
+      id: 0,
       heading: `Premium`,
       paragraph: `Advanced features for pros who need more customization.`,
       amount: `299`,
       contact: "with 10,000 contacts",
+      email: `10,000 email sends`
     },
     {
-      id: 11,
+      id: 1,
       heading: `Standard`,
       paragraph: `Better insights for growing business that want more customers.`,
       amount: `17`,
-      contact: "with 500 contacts",
+      contact: "with 6000 contacts",
+      email: `6,000 email sends`
     },
     {
-      id: 12,
+      id: 2,
       heading: `Essentials`,
       paragraph: `Must-have features for email senders who want added support.`,
       amount: `11`,
-      contact: "with 500 contacts",
+      contact: "with 5000 contacts",
+      email: `5,000 email sends`
     },
     {
-      id: 13,
+      id: 3,
       heading: `Free`,
       paragraph: `All the basics for businesses that are just getting started.`,
       amount: `0`,
-      contact: "2,000 contatcs maximum",
+      contact: "2,000 contacts maximum",
+      email: `500 email sends`
     },
   ];
   const clickHandler = (item, index) => {
-    console.log(item)
     if (item.id === index) {
-      console.log("we are moving", index, item.id);
-    } else {
-      console.log("try again");
-    }
+      setUpdateUI(item)
+      // setCheckBox(para => !para)
+    } 
   };
-
+  // const [checkbox, setCheckBox] = useState(false)
+  const [updateUI, setUpdateUI] = useState({})
   return (
     <section className="select-class">
       <SetUpHeader />
       <div className="card-flex">
-        {cardState.map((item) => (
+        {cardState.map((item, index) => (
           <Card
             key={item.id}
             heading={item.heading}
             paragraph={item.paragraph}
             amount={item.amount}
             contact={item.contact}
-            clickMe={(item, index) => clickHandler(item, index)}
+            clickMe={() => clickHandler(item, index)}
           />
         ), cardState)}
       </div>
@@ -76,13 +82,14 @@ const SelectPlan = () => {
       </div>
       <article className="list-container">
         <div className="plan-flex">
-          <h4 className="plan-list">Free plan</h4>
-          <p>$0.00</p>
+          {/* <h4 className="plan-list">Free plan</h4> */}
+          <h4 className="plan-list">{updateUI.heading}</h4>
+          <p>{updateUI.amount!==undefined?`$${updateUI.amount}.00`:""}</p>
         </div>
-        <p className="contact-list">2,000 contacts*</p>
-        <p className="email-list">10,000 email sends*</p>
+        <p className="contact-list">{updateUI.contact!==undefined?`${updateUI.contact}*`:''}</p>
+        <p className="email-list">{updateUI.email!==undefined?`${updateUI.email}*`:''}</p>
         {/* <button className="btn-list">Next</button> */}
-        <Button text="Next" />
+        <Link to="SignUp"><Button text="Next" /></Link>
       </article>
     </section>
   );
