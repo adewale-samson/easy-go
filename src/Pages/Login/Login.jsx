@@ -79,7 +79,7 @@ const Login = () => {
                 <p>{formErrors.firstname}</p>
                 <label htmlFor="" className='login-label'>Forgot password?</label>
             </form>
-        <Button text={'Log In'} style={style} className='btn-login' />
+        <Link to='ContactUs'><Button text={'Log In'} style={style} className='btn-login' /></Link>
         </div>
         <div className="login-subcontainer2">
           <img src={main} alt="" className='sub2-image'/>
