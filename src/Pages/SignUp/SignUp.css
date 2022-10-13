@@ -48,9 +48,10 @@
   margin-bottom: 40px;
 }
 .label-show {
-  margin-right: auto;
+  /* margin-left: auto; */
   color: #138ecb;
 }
+
 .checkbox {
   margin-right: 12px;
   height: 25px;
@@ -80,4 +81,32 @@
 }
 .btn-signup {
   border: 1px solid #023047;
+}
+@media screen and (max-width: 1244px) {
+  .signup-subcontainer1 {
+    padding: 0px 50px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .signup-subcontainer1{
+    padding: 0px 30px;
+  }
+  .signup-input{
+    height: 35px;
+  }
+}
+@media screen and (max-width: 566px) {
+  .signup-heading{
+    font-size: 40px;
+  }
+  
+}
+
+@media screen and (max-width: 450px) {
+  .signup-subcontainer1{
+    padding: 0px 15px;
+  }
+  .signup-input{
+    height: 30px;
+  }
 }

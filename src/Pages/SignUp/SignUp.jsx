@@ -16,7 +16,7 @@ const Login = () => {
                 <input type="text" className='signup-input login-input1'/><br/>
                 <label htmlFor="" className='signup-label'>Email</label><br/>
                 <input type="text" className='signup-input login-input1'/><br/>
-                <label htmlFor="" className='signup-label'>Password  <span className='label-show'><img src={eyes} alt="" />Show</span></label><br/>
+                <label className='signup-label'><span>Password</span><span className='label-show'><img src={eyes} alt="" />Show</span></label><br/>
                 <input type="text" className='signup-input input-space'/><br/>
                 <input type="checkbox" name="promotions" id="" className='checkbox'/>
                 <label htmlFor="promotions" className='signup-label label-text'>I don’t want to receive <span>promotional emails</span> from SendEasy.</label>

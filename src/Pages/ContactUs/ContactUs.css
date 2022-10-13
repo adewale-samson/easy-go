@@ -52,3 +52,30 @@ padding-left: 18px;
   right: 0px;
 }
 
+@media screen and (max-width: 1244px) {
+  .contact-sub1 {
+    padding: 0px 50px;
+  }}
+  @media screen and (max-width: 571px) {
+    .contact-sub1 {
+      padding: 0px 30px;
+    }}
+    @media screen and (max-width: 497px) {
+      .contact-sub1 {
+        padding: 0px 10px;
+      }
+      .container-sub1-heading{
+        font-size: 40px;
+      }
+    }
+    @media screen and (max-width: 389px) {
+      .contact-sub1 {
+        padding: 0px 5px;
+      }
+      .container-sub1-heading{
+        font-size: 30px;
+      }
+    }
+
+
+

@@ -66,4 +66,20 @@
     padding: 0px 50px;
   }
 }
+@media screen and (max-width: 599px) {
+  .login-subcontainer1{
+    padding: 0px 30px;
+  }
+  .login-input{
+    height: 40px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login-subcontainer1{
+    padding: 0px 15px;
+  }
+  .login-input{
+    height: 35px;
+  }
+}
 
