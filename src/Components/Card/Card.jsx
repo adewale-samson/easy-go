@@ -7,11 +7,11 @@ const Card = ({heading, paragraph, amount, contact, clickMe}) => {
   // const changeImage = () => setCheckBox(para =>!para)
   
   return (
-    <article className='card-container'>
+    <article className='card-container' onClick={clickMe}>
         <div className="card-heading-check">
             <h3 className="card-h3">{heading}</h3>
             {/* <img src={unchecked} alt="" className='dot'/> */}
-            <div onClick={clickMe} >
+            <div  >
               {checkbox?<img src={checked} alt="" className='dot' />: <img src={unchecked} alt="" className='dot'/>}</div>
             
         </div>
