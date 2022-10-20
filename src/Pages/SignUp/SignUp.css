@@ -1,6 +1,7 @@
 .signup-main-container {
   display: flex;
   flex-wrap: wrap;
+  /* position: relative; */
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -9,7 +10,7 @@
 }
 .signup-subcontainer1 {
   width: 54.167%;
-  padding: 0px 165px;
+  padding: 0px 95px 0px 165px;
 }
 .signup-heading {
   font-size: 48px;
@@ -54,8 +55,8 @@
 
 .checkbox {
   margin-right: 12px;
-  height: 25px;
-  width: 25px;
+  height: 22px;
+  width: 22px;
 }
 .label-text {
   font-size: 14px;
@@ -82,6 +83,15 @@
 .btn-signup {
   border: 1px solid #023047;
 }
+.signup-page-container{
+  height: 1024px;
+}
+
+.signup-nav-position{
+  position: relative;
+  top: -990px;
+  /* left: 12%; */
+}
 @media screen and (max-width: 1244px) {
   .signup-subcontainer1 {
     padding: 0px 50px;
@@ -93,6 +103,11 @@
   }
   .signup-input{
     height: 35px;
+  }
+  .checkbox {
+    margin-right: 12px;
+    height: 18px;
+    width: 18px;
   }
 }
 @media screen and (max-width: 566px) {
@@ -110,3 +125,11 @@
     height: 30px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .signup-heading{
+    font-size: 36px;
+
+  }
+}
+

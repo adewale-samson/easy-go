@@ -6,21 +6,25 @@ import Login from './Pages/Login/Login';
 import SelectPlan from './Pages/SelectPlan/SelectPlan';
 import SignUp from './Pages/SignUp/SignUp'
 import { Route, Routes} from 'react-router-dom'
+import LandingPage from './Pages/LandingPage/LandingPage';
+import Footer from './Components/Footer/Footer'
 
 
 function App() {
   return (
     <div>
-      {/* <SelectPlan/>
-      <Login />
-      <SignUp /> */}
+      {/* <Footer /> */}
+      {/* <SelectPlan/> */}
+      {/* <Login /> */}
+      {/* <SignUp /> */}
       {/* <Nav /> */}
-       <Routes>
+      <LandingPage />
+       {/* <Routes>
         <Route path='/' element={<SelectPlan/>} />
       <Route path='/ContactUs' element={<ContactUs />} />
       <Route path='/Login' element={<Login />} />
       <Route path='/SignUp' element={<SignUp />} />
-      </Routes> 
+      </Routes>  */}
     </div>
   );
 }

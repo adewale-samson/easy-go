@@ -1,54 +1,114 @@
 .nav-flex{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     list-style-type: none;
-    /* margin-top: 40px; */
     font-family: 'Montseratt', sans-serif;
-    height: 80vh;
+    /* height: 40vh; */
+    padding: 0px 105px;
+    width: 100%;
 }
 .nav-logo{
     margin-right: auto;
+    /* margin-right: 150px; */
+    /* margin-bottom: 50px; */
 }
 .nav-list{
-    padding-right: 20px;
+    padding-right: 45px;
+    height: 13vh;
 }
-.hamburger{
-    /* position: absolute;
-    top: 5px;
-    right: 20px; */
-    font-size: 40px;
+.list-color{
+    color: #fff;
+}
+.nav-item, .hide-glass{
+    margin-top: 10px;
+}
+.nav-margin{
+    padding-right: 26px;
+}
+.last-list-pad{
+    padding-right: 0px;
+}
+.hamburger, .times{
+    font-size: 30px;
     order: 2;
 }
-.times{
-    /* position: absolute;
-    top: 5px;
-    right: 20px; */
-    font-size: 40px;
+.show-hamburger{
+    display: none;
+}
+.btn-position{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-flex{
+        padding: 0px 50px;
+    }
+    .nav-list{
+        padding-right: 20px;
+    }
+    .last-list-pad{
+        padding-right: 0px;
+    }
+}
+@media screen and (max-width: 821px) {
+    .nav-flex{
+        padding: 0px 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .nav-item{
         order: 3;
         width: 100%;
-        text-align: center;
-        
-        
+        text-align: center;          
+    }
+    .show-hamburger{
+        display: block;
+        order: 0
+    }
+    /* .nav-list{
+        padding-right: 10px;
+    } */
+    .last-list-pad{
+        padding-right: 10px;
+    }
+    .list-color{
+        color: #000;
+    }
+    .nav-item{
+        display: none;
+    }
+    .active{display: inline-block;}
+    .button-display{
+        display: inline-block;
     }
 }
 @media screen and (max-width: 468px) {
     
     .nav-list{
-        width: 100%;
+        width: 100vw;
         text-align: center;
-        /* order: 2; */
-    }
-    .nav-list Button{
-        /* border-radius: 30%; */
-        width: 100%;
     }
     .hide-glass{
         display: none;
     }
+    .hamburger, .times{
+        font-size: 30px;
+        order: 0;
+    }
+    .btn-position{
+        order: 5;
+
+    }
+    .hide-btn{
+        display: none;
+    }
+    .active{
+        display: block;
+    }
+
 }

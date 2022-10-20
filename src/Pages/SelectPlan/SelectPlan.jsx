@@ -4,9 +4,8 @@ import compare from "../../Assets/compare.svg";
 import down from "../../Assets/down-arrow.svg";
 import SetUpHeader from "../../Components/SetUpHeader/SetUpHeader";
 import Button from "../../Components/Button/Button";
-import { useState } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
-
 
 const SelectPlan = () => {
   const cardState = [
@@ -46,13 +45,13 @@ const SelectPlan = () => {
   const clickHandler = (item, index) => {
     if (item.id === index) {
       setUpdateUI(item)
-      // setCheckBox(para => !para)
+      setCheckBox(para => !para)
     } 
   };
-  // const [checkbox, setCheckBox] = useState(false)
+  const [checkbox, setCheckBox] = useState(false)
   const [updateUI, setUpdateUI] = useState({})
   return (
-    <section className="select-class">
+      <section className="select-class">
       <SetUpHeader />
       <div className="card-flex">
         {cardState.map((item, index) => (
@@ -63,6 +62,7 @@ const SelectPlan = () => {
             amount={item.amount}
             contact={item.contact}
             clickMe={() => clickHandler(item, index)}
+            checkbox={checkbox}
           />
         ), cardState)}
       </div>

@@ -1,9 +1,9 @@
 import './Button.css'
 
-const Button = ({style, text}) => {
+const Button = ({style, text, img}) => {
   return (
     <>
-        <button className="btn-list" style={style} >{text}</button>
+        <button className="btn-list" style={style} ><img src={img}/> {text}</button>
     </>
   )
 }
