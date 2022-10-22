@@ -8,17 +8,20 @@ const Card = ({ heading, paragraph, amount, contact, clickMe, checkbox }) => {
   // const changeImage = () => setCheckBox(para =>!para)
 
   return (
-    <article className="card-container" onClick={clickMe}>
+    <article className="card-container" >
       <div className="card-heading-check">
         <h3 className="card-h3">{heading}</h3>
         {/* <img src={unchecked} alt="" className='dot'/> */}
-        <div>
+        <div onClick={clickMe}>
           {checkbox ? (
             <img src={checked} alt="" className="dot" />
           ) : (
             <img src={unchecked} alt="" className="dot" />
           )}
         </div>
+        {/* <div onClick={clickMe}>
+            <img src={unchecked} alt="" className="dot" />
+        </div> */}
       </div>
       <p className="card-para">{paragraph}</p>
       <p className="pay-para">You’ll pay</p>

@@ -44,7 +44,7 @@ const ListComponent = () => {
           <li className='foot-list-item'><a href="./">Contact Us</a></li>
           <li className='foot-list-item'><a href="./">Hire an Expert</a></li>
         </ul>
-        <div>
+        <div className='last-div'>
         <ul className='footer-ul footer-margin'>
           <li className='item-bold'><a href="./">Send easy</a></li>
           <li className='foot-list-item'><a href="./">Films, podcasts, and original series that celebrate the entrepreneurial spirit.</a></li>

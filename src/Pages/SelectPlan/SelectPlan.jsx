@@ -6,6 +6,8 @@ import SetUpHeader from "../../Components/SetUpHeader/SetUpHeader";
 import Button from "../../Components/Button/Button";
 import { useState} from "react";
 import { Link } from "react-router-dom";
+import checked from "../../Assets/check.svg";
+import unchecked from "../../Assets/uncheck.svg";
 
 const SelectPlan = () => {
   const cardState = [
@@ -44,10 +46,27 @@ const SelectPlan = () => {
   ];
   const clickHandler = (item, index) => {
     if (item.id === index) {
+      console.log(index, item.id)
       setUpdateUI(item)
       setCheckBox(para => !para)
-    } 
+    // } if (currentTarget !== null) {
+    //   console.log(index, item.id)
+    //   console.log(currentTarget)
+    //   return setCheckBox(para =>!para)
+    }
   };
+  // const clickHandler = (e, item, index) => {
+  //   if (item.id === index) {
+  //     console.log(e, index, item.id)
+  //     setUpdateUI(item)
+  //     setCheckBox(para => !para)
+  //   // } if (currentTarget !== null) {
+  //   //   console.log(index, item.id)
+  //   //   console.log(currentTarget)
+  //   //   return setCheckBox(para =>!para)
+  //   }
+  // };
+ 
   const [checkbox, setCheckBox] = useState(false)
   const [updateUI, setUpdateUI] = useState({})
   return (
@@ -89,7 +108,7 @@ const SelectPlan = () => {
         <p className="contact-list">{updateUI.contact!==undefined?`${updateUI.contact}*`:''}</p>
         <p className="email-list">{updateUI.email!==undefined?`${updateUI.email}*`:''}</p>
         {/* <button className="btn-list">Next</button> */}
-        <Link to="SignUp"><Button text="Next" /></Link>
+        <Button text="Next" />
       </article>
     </section>
   );

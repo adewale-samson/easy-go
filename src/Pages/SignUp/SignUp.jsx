@@ -81,7 +81,7 @@ const SignUp = () => {
         <div className="signup-subcontainer1">
           <h2 className="signup-heading">Welcome to SendEasy</h2>
           <p className="signup-para">
-            Create an account or <span className="signup-small">log in</span>
+            Create an account or <Link to='/Login'><span className="signup-small">log in</span></Link>
           </p>
           <form className="signup-form" onSubmit={handleSubmit}>
             <div>

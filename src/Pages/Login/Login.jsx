@@ -6,7 +6,7 @@ import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const style = { width: "100%" };
+const style = { width: "100%", marginTop: '20px' };
 const Login = () => {
   const initialValues = {
     username: "",
@@ -55,7 +55,7 @@ const Login = () => {
           <h2 className="login-heading">Log In</h2>
           <p className="login-para">
             Need a SendNow account?{" "}
-            <small className="login-small">Create an account</small>
+            <Link to='/SignUp'><small className="login-small">Create an account</small></Link>
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
             <div>
@@ -93,7 +93,7 @@ const Login = () => {
             </div>
             <p>{formErrors.password}</p>
             <label htmlFor="" className="login-label">
-              Forgot password?
+              <span>Forgot password?</span>
             </label>
             <Button text={"Log In"} style={style} className="btn-login" />
           </form>
