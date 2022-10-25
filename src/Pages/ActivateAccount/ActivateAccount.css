@@ -1,0 +1,149 @@
+.activate-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* position: relative; */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #023047;
+  height: 924px;
+  /* height: auto; */
+}
+.activate-subcontainer1 {
+  width: 54.167%;
+  padding: 0px 27px 0px 165px;
+}
+.activate-main-heading {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 59px;
+  margin-bottom: 34px;
+  margin-top: 201px;
+}
+.activate-first-para span{
+  font-weight: 700;
+}
+.activate-sub-heading {
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 35px;
+}
+.activate-list-container {
+  margin: 37px 0px 51px 0px;
+  list-style-position: inside;
+}
+.activate-list-item{
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+.activate-third-para{
+    font-size: 14px;
+line-height: 17px;
+color: #138ECB;
+text-decoration: underline;
+}
+.activate-subcontainer2 {
+  width: 45.833%;
+  position: relative;
+  background: #fb8500;
+}
+.activate-image {
+  max-width: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.activate-page-container {
+  height: 924px;
+}
+
+.activate-nav-position {
+  position: relative;
+  top: -890px;
+}
+@media screen and (max-width: 1126px) {
+  .activate-subcontainer1 {
+    padding: 0px 27px 0px 100px;
+  }
+}
+@media screen and (max-width: 838px) {
+  .activate-subcontainer1 {
+    padding: 0px 27px 0px 50px;
+  }
+  .activate-main-heading{
+    margin-top: 120px;
+  }
+}
+@media screen and (max-width: 611px) {
+  .activate-main-heading {
+    font-size: 40px;
+  line-height: 49px;
+  }
+}
+
+@media screen and (max-width: 533px) {
+  .signup-subcontainer1 {
+    padding: 0px 20px;
+  }
+  .activate-main-heading {
+    font-size: 38px;
+  line-height: 39px;
+  margin-bottom: 24px;
+  margin-top: 100px;
+  }
+  .activate-list-container {
+    margin: 27px 0px 27px 0px;
+  }
+  .activate-sub-heading {
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 533px) {
+  .activate-subcontainer1 {
+    padding: 0px 20px;
+  }
+  .activate-main-heading {
+    font-size: 38px;
+  line-height: 39px;
+  margin-bottom: 24px;
+  }
+  .activate-list-container {
+    margin: 27px 0px 27px 0px;
+  }
+  .activate-sub-heading {
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 25px;
+  }
+}
+
+/* @media screen and (max-width: 346px) {
+  .activate-subcontainer1 {
+    padding: 0px 10px;
+  }
+  .activate-main-heading{
+    margin-top: 95px;
+  }
+}  */
+@media screen and (max-width: 468px) {
+  .activate-subcontainer1 {
+    padding:0 50px;
+    width: 100%;
+    /* text-align: center; */
+  }
+  .activate-subcontainer2 {
+    display: none;
+  }
+  .activate-main-heading{
+    margin-top: 120px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .activate-list-container {
+    margin: 27px 0px 57px 0px;
+  }
+} 

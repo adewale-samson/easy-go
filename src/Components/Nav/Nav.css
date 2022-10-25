@@ -18,6 +18,7 @@
 .nav-list{
     padding-right: 45px;
     height: 13vh;
+    cursor: pointer;
 }
 .list-color{
     color: #fff;

@@ -55,7 +55,7 @@ const Login = () => {
           <h2 className="login-heading">Log In</h2>
           <p className="login-para">
             Need a SendNow account?{" "}
-            <Link to='/SignUp'><small className="login-small">Create an account</small></Link>
+            <Link to='/SignUp' style={{textDecoration:'none'}}><small className="login-small">Create an account</small></Link>
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
             <div>

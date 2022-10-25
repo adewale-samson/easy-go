@@ -41,7 +41,8 @@
 .query-logo {
   position: absolute;
   right: 41px;
-  bottom: 69px
+  bottom: 69px;
+  cursor: pointer;
 }
 .btn-landing-container{
   margin-bottom: 127px;

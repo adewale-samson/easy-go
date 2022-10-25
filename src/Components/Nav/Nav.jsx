@@ -14,7 +14,7 @@ const Nav = ({style}) => {
   return (
     <div>
       <ul className="nav-flex" style={style}>
-      <li className='nav-logo'><Link to='/'>
+      <li className='nav-logo'><Link to='/' style={{textDecoration:'none'}}>
         <img src={send} alt="logo" /></Link>
       </li>
       <li className={navItem?"nav-list nav-item active":"nav-list nav-item"}>Products</li>
@@ -26,10 +26,10 @@ const Nav = ({style}) => {
       </li>
       <div className={navItem?"btn-position hide-btn active":"btn-position hide-btn"}>
       <li className="nav-list nav-margin button-display">
-        <Link to='/Login'><Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047'}} text="Log in" /></Link>
+        <Link to='/Login' style={{textDecoration:'none'}}><Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047'}} text="Log in" /></Link>
       </li>
       <li className="nav-list last-list-pad button-display">
-        <Link to='/SignUp'><Button style={{width:"105px", backgroundColor:'#023047'}} text="Sign Up" /></Link>
+        <Link to='/SignUp' style={{textDecoration:'none'}}><Button style={{width:"105px", backgroundColor:'#023047'}} text="Sign Up" /></Link>
       </li>
       </div>
       <div className="show-hamburger" onClick={clickToggle}>{navItem?<span className="times">&times;</span>:<span className="hamburger">&#9776;</span>}</div>

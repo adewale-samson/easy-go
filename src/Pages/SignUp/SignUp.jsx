@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const style = {
-  width: "154px",
+  width: "134px",
   backgroundColor: "#fff",
   color: "#023047",
   margin: "0px",
@@ -76,12 +76,15 @@ const SignUp = () => {
     return errors;
   };
   return (
-      <div className="signup-page-container">
+    <div className="signup-page-container">
       <section className="signup-main-container">
         <div className="signup-subcontainer1">
           <h2 className="signup-heading">Welcome to SendEasy</h2>
           <p className="signup-para">
-            Create an account or <Link to='/Login'><span className="signup-small">log in</span></Link>
+            Create an account or{" "}
+            <Link to="/Login" style={{ textDecoration: "none" }}>
+              <span className="signup-small">log in</span>
+            </Link>
           </p>
           <form className="signup-form" onSubmit={handleSubmit}>
             <div>
