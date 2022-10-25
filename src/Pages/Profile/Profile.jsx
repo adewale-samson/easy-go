@@ -1,6 +1,6 @@
 import "./Profile.css";
-import SetUpHeader from "../SetUpHeader/SetUpHeader";
-import Button from "../Button/Button";
+import SetUpHeader from '../../Components/SetUpHeader/SetUpHeader'
+import Button from '../../Components/Button/Button'
 import profile_main from "../../Assets/profile_main.svg";
 
 const Profile = () => {
