@@ -7,11 +7,16 @@ import { Route, Routes } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import ActivateAccount from "./Pages/ActivateAccount/ActivateAccount";
 import Profile from "./Pages/Profile/Profile";
+import AddAddress from './Pages/AddAddress/AddAddress'
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Nav from "./Components/Nav/Nav";
 
 function App() {
   return (
     <div>
-      
+      {/* <Nav /> */}
+      {/* <LandingPage /> */}
+      {/* <Dashboard /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="SelectPlan" element={<SelectPlan />} />

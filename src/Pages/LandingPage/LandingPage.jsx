@@ -11,6 +11,9 @@ import push from "../../Assets/push.svg";
 import Offer from "../../Components/Offer/Offer";
 import Footer from "../../Components/Footer/Footer";
 import { Link } from "react-router-dom";
+import { signInWithGoogle } from "../../services/firebase";
+import firebase from '../../services/firebase'
+import { useEffect, useState } from "react";
 
 const styleButton1 = {
   width: "147px",
@@ -55,10 +58,18 @@ const offeringList = [
 ];
 
 const LandingPage = () => {
+
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user =>{
+      setUser(user)
+    })
+  }, [])
+  console.log(user)
   return (
     <>
       <header className="hero-section">
-        <Nav style={{ padding: "40px 44px 0px 0px" }} />
+        <Nav style={{ padding: "20px 44px 0px 0px" }} />
         <div className="hero-main-container">
           <div className="hero-subcontainer1">
             <h1 className="hero-heading">
@@ -75,6 +86,7 @@ const LandingPage = () => {
                 img={gmail}
                 text={`Sign in with Google`}
                 style={styleButton2}
+                onClick={signInWithGoogle}
               />
             </div>
           </div>

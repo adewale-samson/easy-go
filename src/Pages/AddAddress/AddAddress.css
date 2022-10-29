@@ -1,0 +1,122 @@
+.address-main-container {
+    display: flex;
+    height: 1024px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 11px;
+    color: #023047;
+  }
+  .address-sub-container1 {
+    width: 54.167%;
+    padding-left: 150px;
+  }
+  .address-heading {
+    margin: 20px 0px 13px 0px;
+    font-weight: 500;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: -0.09em;
+  }
+  .address-paragraph{
+line-height: 26px;
+letter-spacing: 0.06em;
+font-weight: 500;
+font-size: 14px;
+line-height: 26px;
+padding-bottom: 39px;
+text-align: start;
+  }
+  .international{
+    color: #138ECB;
+    text-decoration: underline;
+  }
+  .address-form{
+      padding-right: 38px;
+  }
+  .address-city{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  .address-input{
+      margin: 10px 0px 25px 0px;
+      width: 100%;
+      height: 40px;
+      font-family: inherit;
+  }
+  .final-input{
+      margin-bottom: 0px;
+  }
+  .city-input{
+      width: 280px;
+      height: 40px;
+  }
+  .address-sub-container2 {
+    width: 46.833%;
+    position: relative;
+    background: #fb8500;
+  }
+  .address_img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    max-width: 100%;
+  }
+  .address-select select{
+    font-family: inherit;
+  }
+  @media screen and (max-width: 1340px){
+  .address-sub-container1 {
+          padding-left: 100px;
+        }
+  }
+  @media screen and (max-width: 1240px){
+  .address-sub-container1 {
+          padding-left: 70px;
+        }
+  }
+  @media screen and (max-width: 650px){
+  .address-sub-container1 {
+          padding-left: 40px;
+        }
+  /* .profile-main-container{
+      height: 824px;
+  } */
+  .address-heading {
+      margin: 70px 0px 34px 0px;
+      /* font-weight: 500;
+    font-size: 42px;
+    line-height: 59px;
+    letter-spacing: -0.04em; */
+    }
+  }
+  @media screen and (max-width: 556px) {
+      /* .profile-main-container{
+          padding: 0 40px;
+      } */
+      .address-sub-container2 {
+          display: none;
+        }
+      .address-sub-container1{
+          width: 100%;
+      }
+      .name-input{
+          width: 100%;
+      }
+  }
+  @media screen and (max-width: 503px){
+      .address-input{
+          width: 238px;
+      }
+  }
+  @media screen and (max-width: 375px){
+    .address-line1 label{
+        display: inline-block;
+        line-height: 19px; 
+    
+      }
+  }
+  
+  

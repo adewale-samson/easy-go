@@ -15,10 +15,17 @@ const Login = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true)
+
+  
+  const showPasswordHandler = () => {
+    setHidePassword(item => !item)
+  }
   const handleChange = (e) => {
     console.log(e.target);
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    
     console.log(formValues);
   };
   const handleSubmit = (e) => {
@@ -58,7 +65,7 @@ const Login = () => {
             <Link to='/SignUp' style={{textDecoration:'none'}}><small className="login-small">Create an account</small></Link>
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
-            <div>
+            <div className="input-container">
               <label htmlFor="username" className="login-label">
                 Username
               </label>
@@ -71,27 +78,29 @@ const Login = () => {
                 value={formValues.username}
                 onChange={handleChange}
               />
+            <p className='input-error-message'>{formErrors.username}</p>
             </div>
-            <p>{formErrors.username}</p>
-            <div>
+            <div className="input-container">
               <label htmlFor="password" className="login-label label-flex">
                 Password{" "}
-                <span className="label-show">
+                
+              </label>
+              <span className="label-show" id="password-show" onClick={showPasswordHandler}>
                   <img src={eyes} alt="" />
                   Show
                 </span>
-              </label>
               <br />
               <input
-                type="password"
+                type={hidePassword?'password':'text'}
                 id="password"
                 name="password"
+                aria-describedby="password-show"
                 className="login-input"
                 value={formValues.password}
                 onChange={handleChange}
               />
+            <p className='input-error-message'>{formErrors.password}</p>
             </div>
-            <p>{formErrors.password}</p>
             <label htmlFor="" className="login-label">
               <span>Forgot password?</span>
             </label>

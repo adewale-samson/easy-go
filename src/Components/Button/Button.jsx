@@ -1,5 +1,6 @@
 import './Button.css'
 
+
 const Button = ({style, text, img}) => {
   return (
     <>

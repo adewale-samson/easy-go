@@ -33,7 +33,7 @@
   position: relative;
 }
 .hero-img {
-  width: 100%;
+  max-width: 100%;
   position: absolute;
   right: 105px;
   bottom: 30px;
