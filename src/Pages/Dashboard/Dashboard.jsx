@@ -1,23 +1,33 @@
 import './Dashboard.css'
-import create from '../../Assets/create.svg'
-import audience from '../../Assets/audience.svg'
-import campaign from '../../Assets/campaign.svg'
-import automation from '../../Assets/automation.svg'
-import search from '../../Assets/search.svg'
-import downArrow from '../../Assets/dashboard-down.svg'
+import DashboardCard from "../../Components/DashboardCard/DashboardCard"
+import DashboardComponent from "../../Components/DashboardComponent/DashboardComponent"
+import dashemail from '../../Assets/dashboard_email.svg'
+import dashmessage from '../../Assets/dashboard_message.svg'
+import dashcreate from '../../Assets/dashboard_create.svg'
 
-const miniList = [
-    {id: 0, img1: create, text: 'Create', img2: ''}, {id:1, img1: audience, text: 'Audience', img2: downArrow},{id:2, img1: campaign, text: 'Campaigns', img2: downArrow},{id:3, img1: automation, text: 'Automations', img2: downArrow},{id:4, img1: search, text: 'Search', img2: ''}
-]
+
+
+
 const Dashboard = () => {
+  const dashboardData = [{id: 0, head: 'Send your first email', text: 'Choose a pre-designed template', buttonText: 'Create Email', bgColor: '#FBCFBD', img: dashemail},{id: 1, head: 'Send your first text message', text: 'Choose a pre-designed template', buttonText: 'Create Text', bgColor: '#D8EACC', img: dashmessage},{id: 2, head: 'Create audience', text: `Once you add your contacts, you’ll be able to send your first campaign`, buttonText: 'Create Audience', bgColor: `#C5DBF2`, img: dashcreate}]
   return (
-    <div>
-        <ul>
-           { miniList.map(item => (
-                <li key={item.id}><span><img src={item.img1} />{item.text}</span><span><img src={item.img2} /></span></li> 
-            ))}
-        </ul>
-    </div>
+    <>
+      <div className="main-dashboard-container">
+        <DashboardComponent />
+        <div className='dashboard-second-section'>
+          <h1 className='dashboard-h1'>Create your first campaign</h1>
+          <h2 className='dashboard-h2'>Chose how you’d like to start</h2>
+          <div className="dashboard-card-flex">
+            {
+              dashboardData.map(item => <DashboardCard key={item.id} heading={item.head} text={item.text} btnText={item.buttonText} background={item.bgColor} img={item.img}/>)
+            }
+          </div>
+        </div>
+
+
+      </div>
+      {/* <DashboardCard /> */}
+    </>
   )
 }
 

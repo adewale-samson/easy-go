@@ -1,0 +1,54 @@
+/* .dashboard-logo-flex{
+    display: flex;  
+} */
+.dash-component-container{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: -0.09em;
+color: #023047;
+width: 20.069%;
+/* width: 300px; */
+padding: 20px;
+border-right: 1px solid #DEDDDC;
+
+}
+.dash-list-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.dash-sub-list-item{
+    display: flex;
+    align-items: center;
+}
+.list-image1{
+    margin-right: 30px;
+}
+.dash-component-para{
+    width: 95%;
+    height: 43px;
+    margin: 0 auto;
+    background: #D1E7EA;
+    text-align: center;
+    margin-top: 186px;
+}
+.newuser-flex{
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+}
+.new-user-logo{
+    padding-right: 19px;
+}
+.dash-component-username{
+font-size: 14px;
+line-height: 17px;
+}
+.dash-component-user-status{
+    font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+}

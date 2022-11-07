@@ -10,10 +10,14 @@ import chatbox from "../../Assets/chatbox.svg";
 import push from "../../Assets/push.svg";
 import Offer from "../../Components/Offer/Offer";
 import Footer from "../../Components/Footer/Footer";
-import { Link } from "react-router-dom";
-import { signInWithGoogle } from "../../services/firebase";
-import firebase from '../../services/firebase'
+import { Link, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { auth } from "../../services/firebase";
+import {useAuthState} from 'react-firebase-hooks/auth';
+
+
+
 
 const styleButton1 = {
   width: "147px",
@@ -59,16 +63,29 @@ const offeringList = [
 
 const LandingPage = () => {
 
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged(user =>{
-      setUser(user)
-    })
-  }, [])
-  console.log(user)
+  const [user, loading] = useAuthState(auth)
+
+  // const [user, setUser] = useState(null);
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged(user =>{
+  //     setUser(user)
+  //   })
+  // }, [])
+  // console.log(user)
+  let navigate = useNavigate();
+  const googleProvider = new GoogleAuthProvider();
+  const GoogleSignin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      console.log(result.user);
+      navigate('/Dashboard')
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
-    <>
-      <header className="hero-section">
+    <div>
+     (<header className="hero-section">
         <Nav style={{ padding: "20px 44px 0px 0px" }} />
         <div className="hero-main-container">
           <div className="hero-subcontainer1">
@@ -86,7 +103,7 @@ const LandingPage = () => {
                 img={gmail}
                 text={`Sign in with Google`}
                 style={styleButton2}
-                onClick={signInWithGoogle}
+                buttonClick={GoogleSignin}
               />
             </div>
           </div>
@@ -111,8 +128,8 @@ const LandingPage = () => {
           ))}
         </ul>
       </section>
-      <Footer />
-    </>
+      <Footer />)
+    </div>
   );
 };
 

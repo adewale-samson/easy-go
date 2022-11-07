@@ -25,6 +25,8 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path='/Activate' element={<ActivateAccount />} />
         <Route path='/Profile' element={<Profile />} />
+        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/AddAddress' element={<AddAddress />} />
       </Routes>
       
     </div>

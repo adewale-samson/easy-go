@@ -1,10 +1,10 @@
 import './Button.css'
 
 
-const Button = ({style, text, img}) => {
+const Button = ({style, text, img, buttonClick}) => {
   return (
     <>
-        <button className="btn-list" style={style} ><img src={img}/> {text}</button>
+        <button className="btn-list" style={style} onClick={buttonClick}><img src={img} alt=''/> {text}</button>
     </>
   )
 }
