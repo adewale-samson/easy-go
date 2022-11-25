@@ -12,7 +12,7 @@ const Nav = ({style}) => {
   }
 
   return (
-    <div>
+    <div className='nav-trial'>
       <ul className="nav-flex" style={style}>
       <li className='nav-logo'><Link to='/' style={{textDecoration:'none'}}>
         <img src={send} alt="logo" /></Link>

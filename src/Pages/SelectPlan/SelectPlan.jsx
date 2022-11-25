@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import checked from "../../Assets/check.svg";
 import unchecked from "../../Assets/uncheck.svg";
 import { useNavigate } from "react-router-dom";
+import SelectModal from "../../Components/SelectModal/SelectModal";
 
 
 const SelectPlan = () => {
@@ -49,6 +50,11 @@ const SelectPlan = () => {
 
   const [checkbox, setCheckBox] = useState(false)
   const [updateUI, setUpdateUI] = useState({})
+  const [modal, setModal] = useState(false)
+
+  const backdropHandler = () => {
+    setModal(false)
+  }
   const navigate = useNavigate();
   const newObject = {...updateUI}
     console.log(Object.keys(newObject))
@@ -56,7 +62,9 @@ const SelectPlan = () => {
     if (Object.keys(updateUI).length !== 0) {
       
       navigate('/Profile')
-    } alert('Please select a plan')
+    } else {
+      setModal(true);
+    }
   }
 
   const clickHandler = (item, index) => {
@@ -83,7 +91,9 @@ const SelectPlan = () => {
   // };
 
   return (
-      <section className="select-class">
+      <>
+        <SelectModal show={modal} clickBackdrop={backdropHandler}/>
+        <section className="select-class">
       <SetUpHeader />
       <div className="card-flex">
         {cardState.map((item, index) => (
@@ -124,6 +134,7 @@ const SelectPlan = () => {
         <Button text="Next" buttonClick={planHandler}/>
       </article>
     </section>
+      </>
   );
 };
 

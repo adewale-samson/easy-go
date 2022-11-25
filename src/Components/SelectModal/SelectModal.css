@@ -1,0 +1,21 @@
+.select-modal-container{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+  font-weight: 500;
+  color: #023047;
+  font-size: 38px;
+  line-height: 59px;
+  padding: 100px 100px;
+  border-radius: 20px;
+  /* border: 1px solid red; */
+  background: white;
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  z-index: 999;
+
+
+}
+.select-modal-text{
+    text-align: center;
+}

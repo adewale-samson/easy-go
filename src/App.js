@@ -10,6 +10,7 @@ import Profile from "./Pages/Profile/Profile";
 import AddAddress from './Pages/AddAddress/AddAddress'
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Nav from "./Components/Nav/Nav";
+import SelectModal from "./Components/SelectModal/SelectModal";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* <Nav /> */}
       {/* <LandingPage /> */}
       {/* <Dashboard /> */}
+      {/* <SelectModal /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/SelectPlan" element={<SelectPlan />} />
