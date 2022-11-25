@@ -19,7 +19,7 @@ function App() {
       {/* <Dashboard /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="SelectPlan" element={<SelectPlan />} />
+        <Route path="/SelectPlan" element={<SelectPlan />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />

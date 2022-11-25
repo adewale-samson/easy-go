@@ -8,6 +8,8 @@ import { useState} from "react";
 import { Link } from "react-router-dom";
 import checked from "../../Assets/check.svg";
 import unchecked from "../../Assets/uncheck.svg";
+import { useNavigate } from "react-router-dom";
+
 
 const SelectPlan = () => {
   const cardState = [
@@ -44,6 +46,19 @@ const SelectPlan = () => {
       email: `500 email sends`
     },
   ];
+
+  const [checkbox, setCheckBox] = useState(false)
+  const [updateUI, setUpdateUI] = useState({})
+  const navigate = useNavigate();
+  const newObject = {...updateUI}
+    console.log(Object.keys(newObject))
+  const planHandler = () => {
+    if (Object.keys(updateUI).length !== 0) {
+      
+      navigate('/Profile')
+    } alert('Please select a plan')
+  }
+
   const clickHandler = (item, index) => {
     if (item.id === index) {
       console.log(index, item.id)
@@ -66,9 +81,7 @@ const SelectPlan = () => {
   //   //   return setCheckBox(para =>!para)
   //   }
   // };
- 
-  const [checkbox, setCheckBox] = useState(false)
-  const [updateUI, setUpdateUI] = useState({})
+
   return (
       <section className="select-class">
       <SetUpHeader />
@@ -108,7 +121,7 @@ const SelectPlan = () => {
         <p className="contact-list">{updateUI.contact!==undefined?`${updateUI.contact}*`:''}</p>
         <p className="email-list">{updateUI.email!==undefined?`${updateUI.email}*`:''}</p>
         {/* <button className="btn-list">Next</button> */}
-        <Button text="Next" />
+        <Button text="Next" buttonClick={planHandler}/>
       </article>
     </section>
   );

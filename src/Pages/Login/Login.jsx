@@ -5,10 +5,13 @@ import Button from "../../Components/Button/Button";
 import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { useNavigate } from "react-router-dom";
 
 const style = { width: "100%", marginTop: '20px' };
 const Login = () => {
   const initialValues = {
+    email: '',
     username: "",
     password: "",
   };
@@ -28,10 +31,26 @@ const Login = () => {
     
     console.log(formValues);
   };
+  let navigate = useNavigate();
   const handleSubmit = (e) => {
+    const authentication = getAuth();
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+
+    signInWithEmailAndPassword(authentication, formValues.email, formValues.password)
+        .then((response) => {
+          navigate('/SelectPlan')
+          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+        })
+        // .catch((error) => {
+        //   if(error.code === 'auth/wrong-password'){
+        //     toast.error('Please check the Password');
+        //   }
+        //   if(error.code === 'auth/user-not-found'){
+        //     toast.error('Please check the Email');
+        //   }
+        // })
   };
   useEffect(() => {
     console.log(formErrors);
@@ -41,17 +60,22 @@ const Login = () => {
   }, [formErrors]);
   const validate = (values) => {
     const errors = {};
+    const regexLogin = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
+    if (!values.email) {
+      errors.email = "Email is required!";
+    } else if (!regexLogin.test(values.email)) {
+      errors.email = "Please enter a valid email!";
+    }
     if (!values.username) {
       errors.username = "Username is required!";
-    }
-    
+    }    
     if (!values.password) {
       errors.password = "Password is required!";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be a minimum of 4 characters";
-    } else if (values.password.length > 10) {
-      errors.password = "Password must not exceed 10 characters";
+    } else if (values.password.length < 8) {
+      errors.password = "Password must be a minimum of 8 characters";
+    } else if (values.password.length > 20) {
+      errors.password = "Password must not exceed 20 characters";
     }
     return errors;
   };
@@ -66,19 +90,19 @@ const Login = () => {
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-container">
-              <label htmlFor="username" className="login-label">
-                Username
+            <label htmlFor="email" className="login-label">
+                Email
               </label>
               <br />
               <input
                 type="text"
-                id="username"
-                name="username"
+                id="email"
+                name="email"
                 className="login-input login-input1"
-                value={formValues.username}
+                value={formValues.email}
                 onChange={handleChange}
               />
-            <p className='input-error-message'>{formErrors.username}</p>
+            <p className="input-error-message">{formErrors.email}</p>
             </div>
             <div className="input-container">
               <label htmlFor="password" className="login-label label-flex">

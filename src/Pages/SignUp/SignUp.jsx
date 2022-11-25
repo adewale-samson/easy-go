@@ -5,6 +5,9 @@ import Button from "../../Components/Button/Button";
 import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import {auth} from '../../services/firebase';
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
+import { useNavigate } from "react-router-dom";
 
 const style = {
   width: "134px",
@@ -14,6 +17,7 @@ const style = {
   border: "1px solid #023047",
 };
 const SignUp = () => {
+  let navigate = useNavigate()
   const initialValues = {
     email: "",
     username: "",
@@ -47,6 +51,17 @@ const SignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    const authentication = getAuth();
+
+    createUserWithEmailAndPassword(authentication, formValues.email, formValues.password)
+    .then(response => {navigate('/SelectPlan')
+      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)})
+    // .catch((error) => {
+    //     if (error.code === 'auth/email-already-in-use') {
+    //       toast.error('Email Already in Use');
+    //     }
+    //   })
+
   };
   useEffect(() => {
     console.log(formErrors);
@@ -68,10 +83,10 @@ const SignUp = () => {
     }
     if (!values.password) {
       errors.password = "Password is required!";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be a minimum of 4 characters";
-    } else if (values.password.length > 10) {
-      errors.password = "Password must not exceed 10 characters";
+    } else if (values.password.length < 8) {
+      errors.password = "Password must be a minimum of 8 characters";
+    } else if (values.password.length > 20) {
+      errors.password = "Password must not exceed 20 characters";
     }
     return errors;
   };
