@@ -1,7 +1,6 @@
 import Button from "../../Components/Button/Button";
 import Nav from "../../Components/Nav/Nav";
 import "./LandingPage.css";
-import gmail from "../../Assets/gmail.svg";
 import hero from "../../Assets/hero-pic.svg";
 import query from "../../Assets/query.svg";
 import marketing from "../../Assets/marketing.svg";
@@ -15,6 +14,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../../services/firebase";
 import {useAuthState} from 'react-firebase-hooks/auth';
+import { FcGoogle } from 'react-icons/fc'
 
 
 
@@ -100,7 +100,8 @@ const LandingPage = () => {
               <Link to='/SignUp'><Button text={"Sign Up"} style={styleButton1} /></Link>
               {/* <Button text={`${<img src={gmail} alt='gmail logo' />} Sign in with Google`} style={styleButton2}/> */}
               <Button
-                img={gmail}
+                img={<FcGoogle />}
+                // img={gmail}
                 text={`Sign in with Google`}
                 style={styleButton2}
                 buttonClick={GoogleSignin}

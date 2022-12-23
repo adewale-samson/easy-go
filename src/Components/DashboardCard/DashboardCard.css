@@ -6,13 +6,16 @@ font-size: 20px;
 line-height: 24px;
 letter-spacing: -0.09em;
 color: #023047;
+border-radius: 10px;
     position: relative;
     width: 311px;
     border: 1px solid #EFEEEA;
     text-align: center;
+    margin-bottom: 20px;
 }
 .dash-card-img{
     position: absolute;
+    max-width: 100%;
     top: 39.41px;
     left: 96.81px;
 }
@@ -33,4 +36,14 @@ font-size: 14px;
 line-height: 17px;
 width: 200px;
 margin: 0 auto;
+}
+@media screen and (max-width: 375px){
+    .dash-card-img{
+        left: 76.81px;
+    }
+}
+@media screen and (max-width: 340px){
+    .dash-card-img{
+        left: 56.81px;
+    }
 }

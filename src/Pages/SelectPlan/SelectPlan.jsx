@@ -10,6 +10,8 @@ import checked from "../../Assets/check.svg";
 import unchecked from "../../Assets/uncheck.svg";
 import { useNavigate } from "react-router-dom";
 import SelectModal from "../../Components/SelectModal/SelectModal";
+import axios from 'axios'
+import { getAuth } from "firebase/auth";
 
 
 const SelectPlan = () => {
@@ -58,9 +60,15 @@ const SelectPlan = () => {
   const navigate = useNavigate();
   const newObject = {...updateUI}
     console.log(Object.keys(newObject))
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const planHandler = () => {
-    if (Object.keys(updateUI).length !== 0) {
-      
+    if (Object.keys(updateUI).length !== 0 && user) {
+      axios.post('https://send-easy-4307a-default-rtdb.firebaseio.com/plan.json', updateUI)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
       navigate('/Profile')
     } else {
       setModal(true);

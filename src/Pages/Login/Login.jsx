@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from "react-router-dom";
+import Spinner from "../../Components/Spinner/Spinner";
 
 const style = { width: "100%", marginTop: '20px' };
 const Login = () => {
@@ -19,6 +20,7 @@ const Login = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [hidePassword, setHidePassword] = useState(true)
+  const [isLoading, setIsLoading] = useState(false);
 
   
   const showPasswordHandler = () => {
@@ -37,11 +39,14 @@ const Login = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    setIsLoading(true)
 
     signInWithEmailAndPassword(authentication, formValues.email, formValues.password)
         .then((response) => {
-          navigate('/SelectPlan')
+          setIsLoading(false)
+          console.log(response)
           sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+          navigate('/SelectPlan')
         })
         // .catch((error) => {
         //   if(error.code === 'auth/wrong-password'){
@@ -80,7 +85,7 @@ const Login = () => {
     return errors;
   };
   return (
-    <div className="login-page-container">
+    isLoading ? <Spinner /> : <div className="login-page-container">
       <section className="login-main-container">
         <div className="login-subcontainer1">
           <h2 className="login-heading">Log In</h2>

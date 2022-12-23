@@ -21,9 +21,9 @@ const Nav = ({style}) => {
       <li className={navItem?"nav-list nav-item active":"nav-list nav-item"}>Resources</li>
       <li className={navItem?"nav-list nav-item  list-color active":"nav-list nav-item list-color"}>Insipiration</li>
       <li className={navItem?"nav-list nav-item  list-color active":"nav-list nav-item list-color"}>Pricing</li>
-      <li className="nav-list nav-margin hide-glass">
+      {/* <li className="nav-list nav-margin hide-glass">
         <img src={glass} alt="binocular" />
-      </li>
+      </li> */}
       <div className={navItem?"btn-position hide-btn active":"btn-position hide-btn"}>
       <li className="nav-list nav-margin button-display">
         <Link to='/Login' style={{textDecoration:'none'}}><Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047'}} text="Log in" /></Link>

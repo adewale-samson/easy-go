@@ -16,7 +16,7 @@
     margin-right: auto;}
 .nav-list{
     padding-right: 45px;
-    height: 13vh;
+    /* height: 13vh; */
     cursor: pointer;
 }
 .list-color{

@@ -6,6 +6,7 @@
   text-align: start;
   position: relative;
   bottom: 0px;
+  cursor: pointer;
   /* margin-bottom: 20px; */
 }
 .offer-image {
@@ -29,16 +30,18 @@
 .offer-container:hover,
 .offer-container:active,
 .offer-container:focus {
-  background: #ffffff;
+  background: #6c63ff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 13px;
   width: 303px;
   height: 385px;
   padding: 39px 12px 40px 12px;
   bottom: 40px;
+  color: #fff;
 }
 .offer-heading:hover,
 .offer-heading:active,
 .offer-heading:focus {
-  color: #6c63ff;
+  /* color: #6c63ff; */
+  color: #000;
 }

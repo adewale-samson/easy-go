@@ -45,6 +45,7 @@ text-align: start;
       width: 100%;
       height: 40px;
       font-family: inherit;
+      padding: 10px;
   }
   .final-input{
       margin-bottom: 0px;

@@ -6,7 +6,7 @@ import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {auth} from '../../services/firebase';
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
+import {getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { useNavigate } from "react-router-dom";
 
 const style = {
@@ -52,10 +52,19 @@ const SignUp = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     const authentication = getAuth();
+    // const fireData = {formValues.email, formValues.password}
 
     createUserWithEmailAndPassword(authentication, formValues.email, formValues.password)
-    .then(response => {navigate('/SelectPlan')
-      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)})
+    .then(response => {
+      navigate('/SelectPlan')
+      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+    })
+
+sendEmailVerification(authentication.currentUser)
+  .then((res) => {
+    return console.log(res)
+    
+  });
     // .catch((error) => {
     //     if (error.code === 'auth/email-already-in-use') {
     //       toast.error('Email Already in Use');

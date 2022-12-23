@@ -50,6 +50,10 @@ letter-spacing: -0.04em;
   right: 0px;
   max-width: 100%;
 }
+.profile-error{
+  color: crimson;
+}
+
 @media screen and (max-width: 1340px){
 .profile-sub-container1 {
         padding-left: 100px;

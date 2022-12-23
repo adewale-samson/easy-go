@@ -37,6 +37,7 @@ border-right: 1px solid #DEDDDC;
 }
 .newuser-flex{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 17px;
 }
@@ -51,4 +52,41 @@ line-height: 17px;
     font-weight: 400;
 font-size: 14px;
 line-height: 17px;
+}
+
+@media screen and (max-width: 768px) {
+    .hide-dash-text{
+        display: none;
+    }
+    .hide-dash-logo{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .dash-component-para{
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+        margin-top: 0px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .hide-down-arrow{
+        display: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    .dash-component-container{
+        padding-left: 10px;
+    }
+    .hide-down-arrow{
+        display: none;
+    }
+    .dash-component-username{
+        font-size: 11px;
+        padding-left: 0px;
+        }
+        .dash-component-user-status{
+        font-size: 11px;
+        }
 }
