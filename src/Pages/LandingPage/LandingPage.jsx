@@ -86,7 +86,7 @@ const LandingPage = () => {
   return (
     <div>
      <header className="hero-section">
-        <Nav style={{ padding: "20px 44px 0px 0px" }} />
+        <Nav classStyle={'nav-pad'} style={{ padding: "20px 44px 0px 0px" }} />
         <div className="hero-main-container">
           <div className="hero-subcontainer1">
             <h1 className="hero-heading">

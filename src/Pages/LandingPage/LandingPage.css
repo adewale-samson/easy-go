@@ -122,7 +122,11 @@
     right: 11px;
     bottom: 109px
   }
-  
+@media screen and (max-width: 768px){
+  .nav-pad{
+    padding-right: 10px !important;
+  }
+}  
 }
 @media screen and (max-width: 678px) {
   .hero-section {
