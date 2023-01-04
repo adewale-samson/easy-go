@@ -58,7 +58,7 @@ const Nav = ({style, classStyle}) => {
       {/* <li className="nav-list nav-margin hide-glass">
         <img src={glass} alt="binocular" />
       </li> */}
-      <div className={navItem?"btn-position hide-btn active":"btn-position hide-btn"}>
+      <div className={navItem?"btn-position":"btn-position hide-btn"}>
       <li className="nav-list nav-margin button-display">
         <Link to='/Login' style={{textDecoration:'none'}}><Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047', borderRadius: '3px'}} text="Log in" /></Link>
       </li>

@@ -2,6 +2,7 @@
   background: #fb8500;
   /* height: 783px; */
   padding-left: 165px;
+  transition: 1s all ease-out;
 }
 .hero-subcontainer1 {
   width: 47.36%;
@@ -20,6 +21,7 @@
   margin-top: 143px;
   margin-bottom: 30px;
   width: 517px;
+  transition: 1s all ease-out;
 }
 .hero-paragraph {
   font-weight: 400;
@@ -27,6 +29,7 @@
   line-height: 31px;
   margin-bottom: 70px;
   width: 407px;
+  transition: 1s all ease-out;
 }
 .hero-subcontainer2 {
   width: 52.639%;
@@ -37,12 +40,14 @@
   position: absolute;
   right: 105px;
   bottom: 30px;
+  transition: 1s all ease-out;
 }
 .query-logo {
   position: absolute;
   right: 41px;
   bottom: 69px;
   cursor: pointer;
+  transition: 1s all ease-out;
 }
 .btn-landing-container{
   margin-bottom: 127px;
@@ -61,6 +66,7 @@
   color: #023047;
   width: 55.789%;
   margin: 94px auto 100px auto;
+  transition: 1s all ease-out;
 }
 
 .offering-container {
@@ -68,6 +74,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 0px 80px;
+  transition: 1s all ease-out;
 }
 
 @media screen and (max-width: 1394px) {

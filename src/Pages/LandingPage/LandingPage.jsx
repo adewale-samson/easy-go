@@ -20,13 +20,13 @@ import { FcGoogle } from 'react-icons/fc'
 
 
 const styleButton1 = {
-  width: "147px",
+  width: "155px",
   height: "50px",
   margin: "0px 25px 40px 0px",
   display: "inline-block",
 };
 const styleButton2 = {
-  width: "223px",
+  width: "165px",
   height: "50px",
   backgroundColor: "#FB8500",
   border: "1px solid #023047",
