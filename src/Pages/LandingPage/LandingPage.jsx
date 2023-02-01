@@ -65,13 +65,6 @@ const LandingPage = () => {
 
   const [user, loading] = useAuthState(auth)
 
-  // const [user, setUser] = useState(null);
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged(user =>{
-  //     setUser(user)
-  //   })
-  // }, [])
-  // console.log(user)
   let navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
   const GoogleSignin = async () => {
@@ -98,10 +91,8 @@ const LandingPage = () => {
             </p>
             <div className="btn-landing-container">
               <Link to='/SignUp'><Button text={"Sign Up"} style={styleButton1} /></Link>
-              {/* <Button text={`${<img src={gmail} alt='gmail logo' />} Sign in with Google`} style={styleButton2}/> */}
               <Button
                 img={<FcGoogle />}
-                // img={gmail}
                 text={`Sign in with Google`}
                 style={styleButton2}
                 buttonClick={GoogleSignin}

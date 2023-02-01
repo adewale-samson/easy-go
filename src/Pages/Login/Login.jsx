@@ -5,12 +5,14 @@ import Button from "../../Components/Button/Button";
 import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { UserAuth } from "../../context/AuthContext"
+// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../Components/Spinner/Spinner";
 
 const style = { width: "100%", marginTop: '20px' };
 const Login = () => {
+  const { user, login } = UserAuth();
   const initialValues = {
     email: '',
     username: "",
@@ -34,28 +36,21 @@ const Login = () => {
     console.log(formValues);
   };
   let navigate = useNavigate();
-  const handleSubmit = (e) => {
-    const authentication = getAuth();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    setIsLoading(true)
-
-    signInWithEmailAndPassword(authentication, formValues.email, formValues.password)
-        .then((response) => {
-          setIsLoading(false)
-          console.log(response)
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-          navigate('/SelectPlan')
-        })
-        // .catch((error) => {
-        //   if(error.code === 'auth/wrong-password'){
-        //     toast.error('Please check the Password');
-        //   }
-        //   if(error.code === 'auth/user-not-found'){
-        //     toast.error('Please check the Email');
-        //   }
-        // })
+    // setIsLoading(true)
+    try {
+      await login(formValues.email, formValues.password)
+      setIsLoading(false)
+      navigate('/SelectPlan')
+    } catch (error) {
+      // setIsLoading(false)
+      console.log(error)
+      // alert(error)
+    }
+         
   };
   useEffect(() => {
     console.log(formErrors);

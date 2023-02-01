@@ -5,10 +5,15 @@ import profile_main from "../../Assets/profile_main.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from 'axios';
+import { UserAuth } from "../../context/AuthContext";
+import { db } from "../../services/firebase";
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const {user} = UserAuth();
   let navigate = useNavigate();
+  const profileID = doc(db, 'users', `${user?.email}`)
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -32,18 +37,17 @@ const Profile = () => {
       
     }),
     //submit form
-    onSubmit: (values, onSubmitProps) => {
+    onSubmit: async (values, onSubmitProps) => {
       console.log(values);
-      // let data = {...values}
-      axios.post('https://send-easy-4307a-default-rtdb.firebaseio.com/profile.json', values)
-      .then(res => {
-        console.log(res)
+      if(user?.email){
+        await updateDoc(profileID, {
+          UserInfo: arrayUnion({
+            profile: values
+          })
+        })
         navigate('/AddAddress')
-        // setToken(res.data.token)
-      })
-      .catch(err => console.log(err))
-      console.log(values)
-      onSubmitProps.resetForm()
+      }
+      
     },
   })
   return (

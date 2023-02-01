@@ -5,8 +5,7 @@ import Button from "../../Components/Button/Button";
 import Nav from "../../Components/Nav/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {auth} from '../../services/firebase';
-import {getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
+import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const style = {
@@ -17,7 +16,8 @@ const style = {
   border: "1px solid #023047",
 };
 const SignUp = () => {
-  let navigate = useNavigate()
+  const { user, signUp } = UserAuth();
+  let navigate = useNavigate();
   const initialValues = {
     email: "",
     username: "",
@@ -41,36 +41,37 @@ const SignUp = () => {
     console.log(typeof (name, value));
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
-
-    // console.log(e.target.checked)
-    // const { name, value } = e.target;
-    // setFormValues({ ...formValues, [name]: value });
-    // console.log(formValues);
   };
-  const handleSubmit = (e) => {
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     setFormErrors(validate(formValues));
+  //     setIsSubmit(true);
+  //     const authentication = getAuth();
+
+  //     createUserWithEmailAndPassword(authentication, formValues.email, formValues.password)
+  //     .then(response => {
+  //       navigate('/SelectPlan')
+  //       sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+  //     })
+
+  // sendEmailVerification(authentication.currentUser)
+  //   .then((res) => {
+  //     return console.log(res)
+
+  //   });
+
+  //   };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    const authentication = getAuth();
-    // const fireData = {formValues.email, formValues.password}
-
-    createUserWithEmailAndPassword(authentication, formValues.email, formValues.password)
-    .then(response => {
-      navigate('/SelectPlan')
-      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-    })
-
-sendEmailVerification(authentication.currentUser)
-  .then((res) => {
-    return console.log(res)
-    
-  });
-    // .catch((error) => {
-    //     if (error.code === 'auth/email-already-in-use') {
-    //       toast.error('Email Already in Use');
-    //     }
-    //   })
-
+    try {
+      await signUp(formValues.email, formValues.password);
+      navigate("/SelectPlan");
+    } catch (error) {
+      console.log(error);
+      // alert(error)
+    }
   };
   useEffect(() => {
     console.log(formErrors);

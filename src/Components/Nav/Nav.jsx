@@ -4,11 +4,22 @@ import Button from "../Button/Button";
 import "./Nav.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 
 const Nav = ({style, classStyle}) => {
+  const { user, logOut } = UserAuth();
+  console.log(user)
   const [navItem, setNavItem] = useState(false)
   function clickToggle() {
     setNavItem(para => !para)
+  }
+
+  const logOutHandler = async() => {
+    try{
+      await logOut()
+    } catch(error){
+      console.log(error)
+    }
   }
 
 //   return (
@@ -58,14 +69,18 @@ const Nav = ({style, classStyle}) => {
       {/* <li className="nav-list nav-margin hide-glass">
         <img src={glass} alt="binocular" />
       </li> */}
-      <div className={navItem?"btn-position":"btn-position hide-btn"}>
+      { user?.email ? (<div className={navItem?"btn-position":"btn-position hide-btn"} onClick={logOutHandler}>
+      <li className="nav-list nav-margin button-display">
+        <Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047', borderRadius: '3px'}} text="Log out" />
+      </li>
+      </div>) : (<div className={navItem?"btn-position":"btn-position hide-btn"}>
       <li className="nav-list nav-margin button-display">
         <Link to='/Login' style={{textDecoration:'none'}}><Button style={{width:"105px",  backgroundColor:'#FB8500', color:'#000000', border: '1px solid #023047', borderRadius: '3px'}} text="Log in" /></Link>
       </li>
       <li className="nav-list last-list-pad button-display">
         <Link to='/SignUp' style={{textDecoration:'none'}}><Button style={{width:"105px", backgroundColor:'#023047', borderRadius: '3px'}} text="Sign Up" /></Link>
       </li>
-      </div>
+      </div>)}
       <div className="show-hamburger" onClick={clickToggle}>{navItem?<span className="times">&times;</span>:<span className="hamburger">&#9776;</span>}</div>
     </ul>
     

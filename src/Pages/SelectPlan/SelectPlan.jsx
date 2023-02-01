@@ -10,7 +10,13 @@ import checked from "../../Assets/check.svg";
 import unchecked from "../../Assets/uncheck.svg";
 import { useNavigate } from "react-router-dom";
 import SelectModal from "../../Components/SelectModal/SelectModal";
+import { UserAuth } from "../../context/AuthContext";
+import { db } from "../../services/firebase";
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import axios from 'axios'
+// import { UserAuth } from "../../context/AuthContext";
+// import { db } from "../../services/firebase";
+// import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 
@@ -50,6 +56,8 @@ const SelectPlan = () => {
     },
   ];
 
+  const {user} = UserAuth();
+
   const [checkbox, setCheckBox] = useState(false)
   const [updateUI, setUpdateUI] = useState({})
   const [modal, setModal] = useState(false)
@@ -60,16 +68,33 @@ const SelectPlan = () => {
   const navigate = useNavigate();
   const newObject = {...updateUI}
     console.log(Object.keys(newObject))
+  const planID = doc(db, 'users', `${user?.email}`)
 
-  const auth = getAuth();
-  const user = auth.currentUser;
+  // const auth = getAuth();
+  // const user = auth.currentUser;
 
-  const planHandler = () => {
-    if (Object.keys(updateUI).length !== 0 && user) {
-      axios.post('https://send-easy-4307a-default-rtdb.firebaseio.com/plan.json', updateUI)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-      navigate('/Profile')
+  // const planHandler = () => {
+  //   if (Object.keys(updateUI).length !== 0 && user) {
+  //     axios.post('https://send-easy-4307a-default-rtdb.firebaseio.com/plan.json', updateUI)
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err))
+  //     navigate('/Profile')
+  //   } else {
+  //     setModal(true);
+  //   }
+  // }
+  const planHandler = async () => {
+    if (Object.keys(updateUI).length !== 0 && user?.email) {
+      try {
+        await updateDoc(planID, {
+          UserInfo: arrayUnion({
+            plan: updateUI
+          })
+        })
+        navigate('/Profile')
+      } catch (error) {
+        console.log(error)
+      }
     } else {
       setModal(true);
     }
